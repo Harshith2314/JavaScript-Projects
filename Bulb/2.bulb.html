@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(59, 59, 59);
+            
+        }
+        body.on{
+            background: url("Fundo de espaço com estrelas_ Ilustração vetorial _ Vetor Premium.jfif");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+       
+        .bulb{
+            position: relative;
+            top: -230px;
+            right: -750px;
+            width: 80px;
+            height: 80px;
+            background: #444;
+            border-radius: 50%;
+            z-index: 2;
+       }
+       body.on .bulb{
+        background-color: #fff;
+        box-shadow: 0 0 50px white,
+        0 0 100px white,
+        0 0 150px white,
+        0 0 200px white,
+        0 0 250px white,
+        0 0 300px white,
+        0 0 350px white,
+        0 0 350px white,
+        0 0 450px white,
+        0 0 550px white,;
+       }
+       .bulb::before{
+        content: '';
+        position: absolute;
+        left: 22.5px;
+        top: -50px;
+        width: 35px;
+        height: 80px;
+        background: #444;
+        border-top: 30px solid #000;
+        border-radius: 10px;
+       }
+       body.on .bulb::before{
+        background: #fff;
+       }
+       body.on .buld::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            filter: bulb(48px);
+        }
+       .bulb span:nth-child(1){
+        position: absolute;
+        top: -16px;
+        left: -4px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        transform: rotate(342deg);
+        border-bottom-right-radius: 40px;
+        box-shadow: 20px 20px 0 10px #444;
+       }
+       body.on .bulb span:nth-child(1){
+        box-shadow: 20px 20px 0 10px #fff;
+       }
+       .bulb span:nth-child(2){
+        position: absolute;
+        top: -16px;
+        right: -4px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        transform: rotate(17deg);
+        border-bottom-left-radius: 40px;
+        box-shadow: -20px 20px 0 10px #444;
+       }
+       
+       body.on .bulb span:nth-child(2){
+        box-shadow: -20px 20px 0 10px #fff;
+       }
+       .wire{
+        position: relative;
+        top: -220px;
+        left:-302px;
+        bottom: 50%;
+        width: 4px;
+        height: 40vh;
+        background-color: #000;
+        z-index: 1;
+       }
+       .bulb2{
+            position: relative;
+            top: -290px;
+            left: -340px;
+            width: 80px;
+            height: 80px;
+            background: #444;
+            border-radius: 50%;
+            z-index: 2;
+       }
+       body.on .bulb2{
+        background-color: #fff;
+        box-shadow: 0 0 50px white,
+        0 0 100px white,
+        0 0 150px white,
+        0 0 200px white,
+        0 0 250px white,
+        0 0 300px white,
+        0 0 350px white,
+        0 0 350px white,
+        0 0 450px white,
+        0 0 550px white,;
+       }
+       .bulb2::before{
+        content: '';
+        position: absolute;
+        left: 22.5px;
+        top: -50px;
+        width: 35px;
+        height: 80px;
+        background: #444;
+        border-top: 30px solid #000;
+        border-radius: 10px;
+       }
+       body.on .bulb2::before{
+        background: #fff;
+       }
+       body.on .buld2::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            filter: bulb(48px);
+        }
+       .bulb2 span:nth-child(1){
+        position: absolute;
+        top: -16px;
+        left: -4px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        transform: rotate(342deg);
+        border-bottom-right-radius: 40px;
+        box-shadow: 20px 20px 0 10px #444;
+       }
+       body.on .bulb2 span:nth-child(1){
+        box-shadow: 20px 20px 0 10px #fff;
+       }
+       .bulb2 span:nth-child(2){
+        position: absolute;
+        top: -16px;
+        right: -4px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        transform: rotate(17deg);
+        border-bottom-left-radius: 40px;
+        box-shadow: -20px 20px 0 10px #444;
+       }
+       
+       body.on .bulb2 span:nth-child(2){
+        box-shadow: -20px 20px 0 10px #fff;
+       }
+       .wire2{
+        position:absolute;
+        top: -15px;
+        left: 1165px;
+        bottom: 40%;
+        width: 4px;
+        height: 30vh;
+        background-color: #000;
+        z-index: 1;
+       }
+       
+       .switch{
+        position: absolute;
+        width: 80px ;
+        height: 80px;
+       top: 50px;
+        left: 150px;
+        background:linear-gradient(#eee,#ccc,#eee);
+        border: 3px solid #000;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .switch .btn{
+        position: relative;
+        width: 25px;
+        height: 40px;
+        background: linear-gradient(#777,#fff,#777);
+        border-radius: 6px;
+        border: 2px solid #000;
+        cursor: pointer;
+    }
+    .switch .btn::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85%;
+        background: linear-gradient(#fff,#fff);
+        border-radius: 4px;
+    }
+    .on .switch .btn::before{
+    top: 15%;
+    }
+    #audio{
+        display: none;
+    }
+    .onoff{
+        position: relative;
+        top: -350px;
+        left: -210px;
+        font-size: xx-large;
+        border: 5px solid black;
+        text-align: center;
+        border-radius: 50px;
+        color: #fff;
+    }
+    /*solar.css*/
+    .container{
+            font-size: 10px;
+            width: 40em;
+            height: 80em;
+            position: relative;
+        }
+        .sun{
+            position: absolute;
+            top: 45em;
+            left: 15em;
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 150px white,0 0 10px white;
+        }
+        .earth,
+        .moon,
+        .mars,
+        .jupiter{
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.2em 0.2em 0 0;
+            border-radius: 50%;
+        }
+        .earth{
+            top: 35em;
+            left: 4em;
+            width: 32em;
+            height: 32em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .moon{
+            top: 0;
+            right: 0;
+            width: 8em;
+            height: 8em;
+            animation: orbit 20.7s linear infinite;
+        }
+        .mars{
+            top: 40em;
+            left: 11em;
+            width: 18em;
+            height: 18em;
+            animation: orbit 68.7s linear infinite;
+        }
+        .jupiter{
+            top: 25em;
+            left: -3em;
+            width: 50em;
+            height: 50em;
+            animation: orbit 60.7s linear infinite;
+        }
+        .earth:before,
+        .moon:before,
+        .mars:before,
+        .jupiter:before{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .earth:before{
+            top: 2.8em;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: aqua;
+        }
+        .moon:before{
+            top: 0.8em;
+            right: 0.2em;
+            height: 1.2em;
+            width: 1.2em;
+            background-color: silver;
+        }
+        .mars:before{
+            top: 1.5em;
+            right: 1.5em;
+            width: 2em;
+            height: 2em;
+            background-color: red;
+        }
+        .jupiter:before{
+            top: 1.7em;
+            right: 5.5em;
+            width: 6em;
+            height: 6em;
+            background-color: rgb(243, 112, 5);
+        }
+        @keyframes orbit {
+            to{
+                transform: rotate(360deg);
+            }           
+        }
+        .star{
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .planet-name{
+            display: none;
+            position: absolute;
+            color: white;
+            font-size: 1.2em;
+        }
+        .sun:hover:after,
+        .earth:hover:after,
+        .moon:hover:after,
+        .mars:hover:after,
+        .jupiter:hover:after{
+            content: attr(data-name);
+            position: absolute;
+            color: white;
+            font-size: 1.2em;
+            top: -1.5em;
+            /* change bottom and adjust the value*/
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+    </style>
+</head>
+<body id="id1" class="off">
+
+   
+    <div class="light">
+        <div class="wire"></div>
+        <div class="bulb">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="wire2"></div>
+        <div class="bulb2"></div>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="switch">
+            <div class="btn" ></div><br>
+        </div>
+        <div class="onoff">On / Off</div>
+    </div>
+    <!--solar-->
+    <div class="container">
+        <div class="sun">
+            <div class="planet-name" data-name="sun">Sun</div>
+        </div>
+        <div class="earth">
+        <div class="planet-name" data-name="Earth">Earth</div>
+        <div class="moon">
+            <div class="planet-name"  data-name="Moon" >Moon</div>
+        </div>
+    </div>
+    <div class="mars">
+        <div class="planet-name"  data-name="Mars" >Mars</div>
+   </div>
+   <div class="jupiter">
+    <div class="planet-name"  data-name="jupiter" >jupiter</div>
+</div>
+    </div>   
+    <script src="bulb1.js">
+    </script>
+    <!--solar.js-->
+    <script>
+        function createStares(){
+            const container = document.querySelector(".container");
+            for(let i=0;i < 1000;i++){
+                //increase the number of stars to 1000
+                const star = document.createElement("div")
+                star.className = "star";
+                star.style.width = "1px";
+                star.style.height = "1px"
+                star.style.top = Math.random()*100 + "96"
+                star.style.left = Math.random()*100 + "96"
+                container.appendChild(star);
+            }
+        }
+        createStares()
+    </script>
+    
+    <audio id="audio" src="" autostart="flase"></audio>
+   
+</body>
+</html>

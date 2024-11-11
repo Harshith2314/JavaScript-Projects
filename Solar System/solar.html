@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("Fundo de espaço com estrelas_ Ilustração vetorial _ Vetor Premium.jfif");
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        .container{
+            font-size: 10px;
+            width: 40em;
+            height: 40em;
+            position: relative;
+        }
+        .sun{
+            position: absolute;
+            top: 45em;
+            left: 15em;
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 150px white,0 0 10px white;
+        }
+        .earth,
+        .moon,
+        .venurs,
+        .jupiter{
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.2em 0.2em 0 0;
+            border-radius: 50%;
+        }
+        .earth{
+            top: 35em;
+            left: 4em;
+            width: 32em;
+            height: 32em;
+            animation: orbit 36.5s linear infinite;
+        }
+        .moon{
+            top: 0;
+            right: 0;
+            width: 8em;
+            height: 8em;
+            animation: orbit 20.7s linear infinite;
+        }
+        .venurs{
+            top: 40em;
+            left: 11em;
+            width: 18em;
+            height: 18em;
+            animation: orbit 68.7s linear infinite;
+        }
+        .jupiter{
+            top: 25em;
+            left: -3em;
+            width: 50em;
+            height: 50em;
+            animation: orbit 60.7s linear infinite;
+        }
+        .earth:before,
+        .moon:before,
+        .venurs:before,
+        .jupiter:before{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+        .earth:before{
+            top: 2.8em;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: aqua;
+        }
+        .moon:before{
+            top: 0.8em;
+            right: 0.2em;
+            height: 1.2em;
+            width: 1.2em;
+            background-color: silver;
+        }
+        .venurs:before{
+            top: 1.5em;
+            right: 1.5em;
+            width: 2em;
+            height: 2em;
+            background-color: rgb(184, 164, 74);
+        }
+        .jupiter:before{
+            top: 1.7em;
+            right: 5.5em;
+            width: 6em;
+            height: 6em;
+            background-color: rgb(243, 112, 5);
+        }
+        @keyframes orbit {
+            to{
+                transform: rotate(360deg);
+            }           
+        }
+        .star{
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .planet-name{
+            display: none;
+            position: absolute;
+            color: white;
+            font-size: 1.2em;
+        }
+        .sun:hover:after,
+        .earth:hover:after,
+        .moon:hover:after,
+        .venurs:hover:after,
+        .jupiter:hover:after{
+            content: attr(data-name);
+            position: absolute;
+            color: white;
+            font-size: 1.2em;
+            top: -1.5em;
+            /* change bottom and adjust the value*/
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun">
+            <div class="planet-name" data-name="sun">Sun</div>
+        </div>
+        <div class="earth">
+        <div class="planet-name" data-name="Earth">Earth</div>
+        <div class="moon">
+            <div class="planet-name"  data-name="Moon" >Moon</div>
+        </div>
+    </div>
+    <div class="venurs">
+        <div class="planet-name"  data-name="venurs" >Venurs</div>
+   </div>
+   <div class="jupiter">
+    <div class="planet-name"  data-name="jupiter" >jupiter</div>
+</div>
+    </div>    
+    <script>
+        function createStares(){
+            const container = document.querySelector(".container");
+            for(let i=0;i < 1000;i++){
+                //increase the number of stars to 1000
+                const star = document.createElement("div")
+                star.className = "star";
+                star.style.width = "1px";
+                star.style.height = "1px"
+                star.style.top = Math.random()*100 + "96"
+                star.style.left = Math.random()*100 + "96"
+                container.appendChild(star);
+            }
+        }
+        createStares()
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body{
+    background:linear-gradient(rgba(83, 83, 82, 0.568),gray), url("Hare Krishna.jfif");
+    background-attachment: fixed;
+    background-position: 80%;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+.main{
+    width: 350px;
+    height: 480px;
+    background:linear-gradient(lightblue,lightgreen,lightyellow );
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 30px 150px black;
+}
+#chk{
+    display: none;
+}
+.signup{
+    position: relative;
+    top: -50px;
+    width: 100%;
+    height: 100%;
+}
+label{
+    color: rgb(243, 204, 8);
+    text-decoration: underline;
+    font-size: 35px;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    margin-bottom: 10px;
+}
+input{
+    position: relative;
+    top: -12px;
+    width: 60%;
+    height: 20px;
+    background: transparent;
+    justify-content: center;
+    display: flex;
+    margin: 18px auto;
+    padding: 10px;
+    border: 1px solid black;
+    color: #0e0e0e;
+    outline: none;
+    border-radius: 50px;
+}
+.input-login{
+    width: 60%;
+    height: 20px;
+    background: transparent;
+    justify-content: center;
+    display: flex;
+    margin: 18px auto;
+    padding: 10px;
+    border: 1px solid black;
+    color: #0c0c0c;
+    outline: none;
+    border-radius: 50px;
+}
+
+button{
+    width: 60%;
+    height: 60%;
+    margin: 10px auto;
+    display: block;
+    color: white;
+    background: rgb(43, 83, 194);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 18px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    transition: .3s ease-in;
+    cursor: pointer;
+    box-shadow: 5px 20px 40px black;
+}
+button:hover{
+    background: rgb(233, 235, 237);
+    color: #0c0c0c;
+}
+.login {
+    position: relative;
+    top: 20px;
+    height: 480px;
+    background: #eee;
+    border-radius: 60% / 5%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+.login label{
+    color: #5d10ec;
+    transform: scale(.6);
+}
+.login p{
+    text-align: center;
+    padding: 20px;
+}
+#chk:checked ~ .login{
+    transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+    transform: scale(1);
+}
+#chk:checked ~ .signup label{
+    transform: scale(.6);
+}
